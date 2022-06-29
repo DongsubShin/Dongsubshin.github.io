@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
-  <title>Simple Storage Dapp 예제 </title>
+  <title>ISSU 워크샵</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
+    @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body, talbe, th, td, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+	pre, form, fieldset, textarea, blockquote, span, * {
+	font-family: 'Noto Sans KR', sans-serif;
+}
   /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
   position: fixed;
@@ -18,41 +25,30 @@
 /* Add some content at the bottom of the video/page */
 .content {
   position: fixed;
-  bottom: 50%;
+  bottom: 35%;
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
   width: 100%;
-  padding: 20px;
 }
 
-/* Style the button used to pause/play the video */
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
 
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
 </style>
 </head>
 <body>
-  
+
 <!-- The video -->
 <video autoplay muted loop id="myVideo">
   <source src="video.mp4" type="video/mp4">
 </video>
 
 <!-- Optional: some overlay text to describe the video -->
-<div class="content">
-  <h1 style = 'text-align:center'><b>안녕하세요 <span id = 'name'></span>님</b></h1>
-  <p style = 'text-align:center'>ISSU 유니콘 워크샵에 참석해주셔서 감사합니다</p>
+<div class="content" style ="text-align:center">
+  <br><br>
+
+  <img src = "logo.png" style = "width:30%; margin-bottom:50px">
+  <br><br>
+  <h1 style = 'text-align:center; font-size: 50pt'><b>안녕하세요 <span id = 'name' style = "color:#3eb489"></span>님</b></h1>
+  <p style = 'text-align:center; font-size:30pt'>출석 완료 되셨습니다</p>
 </div>
 </body>
 
@@ -63,7 +59,14 @@
 
   var q = params.get("name"); //get q param
   document.getElementById('name').innerHTML = q;
-console.log(q);
+  console.log(q);
+
+  var loader = $("div.loader");
+  var container = $("div.container");
+  loader.css("display","none");
+  container.css("display","block");
+
+
 </script>
 </html>
 
